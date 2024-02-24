@@ -4,13 +4,17 @@
 
 std::string last_non_empty_string(const std::string& str)
 {
+  // Store the number of times that a letter has occured
   std::vector<int> occurrence(26, 0);
+  // Store the index of the last time that a letter has occured
   std::vector<int> lastOccurrence(26, -1);
+
   for (size_t i = 0; i < str.size(); ++i) {
     occurrence[str[i] - 'a']++;
     lastOccurrence[str[i] - 'a'] = i;
   }
 
+  // Here we want to find the max(occurrence) so that we can know which letters should we return
   int max = occurrence[0];
   for (int i = 1; i < 26; ++i) {
     if (max < occurrence[i]) {
@@ -18,6 +22,8 @@ std::string last_non_empty_string(const std::string& str)
     }
   }
 
+  // And here we want to find the min(lastOccurrence) so that we can order the letters correctly later
+  // Also we store in a string the characters that we want to order later
   int min = std::numeric_limits<int>::max();
   std::string new_strUnordered = "";
   for (size_t i = 0; i < 26; ++i) {
@@ -30,6 +36,7 @@ std::string last_non_empty_string(const std::string& str)
     } else {lastOccurrence[i] = -1;}
   }
 
+  // And last but not least we order the characters and update the min in every insertion
   std::string new_str = "";
   for (size_t j = 0; j < new_strUnordered.size(); ++j) {
     for (size_t i = 0; i < new_strUnordered.size(); ++i) {
@@ -46,3 +53,6 @@ std::string last_non_empty_string(const std::string& str)
 
   return new_str;
 }
+
+// Note: It can be also done in a nested loop but it would be very time consuming, still
+// i'm pretty it can be done also a lot more effectively, especially in terms of memory space.
