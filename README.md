@@ -1,5 +1,5 @@
 # EmptyStringOps-Codewars
-Perform operation to make string empty
+## Perform operation to make string empty
 
 #### You are given a string "strng"
 ```
