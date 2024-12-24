@@ -1,5 +1,9 @@
-# EmptyStringOps-Codewars
-## Perform operation to make string empty
+# EmptyStringOps
+## About
+
+### This is an algorithm that performs recursively operations to make a string empty.
+
+## Example
 
 #### You are given a string "strng"
 ```
@@ -12,11 +16,4 @@ Remove the underlined characters strng = "(a)a(b)(c)bbca". The resulting string 
 Remove the underlined characters strng = "(a)(b)b(c)a". The resulting string is strng = "ba".
 Remove the underlined characters strng = "(b)(a)". The resulting string is strng = "".
 Return the value of the string strng right before applying the last operation. In the example above, answer is "ba".
-```
-
-#### You can assume on next:
-```
-strng will never be empty
-strng.length <= 5 * 10**5
-strng will contains only of lowercase English letters.
 ```
